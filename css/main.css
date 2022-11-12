@@ -86,6 +86,11 @@ article p {
     height: 150px;
 
     background-image: url('../images/sprints.png');
+    background-position-x: -150px;
+    background-position-y: -70px;
+    
+    background-repeat: no-repeat;
+
 }
 
 #cups { background-position: -150px; }
