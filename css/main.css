@@ -1,3 +1,5 @@
+/*these all apply to the body element -> global rules */
+
 * {
     border: none;
     padding: 0;
@@ -11,14 +13,13 @@ html, body { height: 100%; }
 
 body {
     font-family: sans-serif;
-    background-color: black;
     color: white;
-    background-image: url('../images/Background.jpg');
+    background-color: black;
 }
 
-/* style the header */
+/* main header rules  */
 header{
-    background-color: gold;
+    background-color: black;
     position: sticky;
     top: 0;
     text-align: center;
@@ -27,13 +28,21 @@ header{
 #main-logo { width: 300px; padding: 10px 0;}
 
 /* main section styles */
-#character-nav { text-align: center; background-color: black; }
+#character-nav { 
+    text-align: center; 
+    background-image: url('../images/background.jpg'); }
 
 .characters {list-style-type: none;}
 .characters li { display: inline-block;}
-.characters li img { width: 150px; cursor: pointer; }
+
+.characters li img { 
+    width: 150px; 
+    cursor: pointer; }
 
 article { padding: 20px; }
+
+/* select */
+/* select */
 
 article h3 {
     font-size: 2em;
@@ -41,6 +50,7 @@ article h3 {
     margin-bottom: 14px;
 }
 
+/* select */
 article p {
     width: 80%;
     font-size: 18px;
@@ -49,7 +59,7 @@ article p {
     margin: 0 auto;
 }
 
-/* style the footer */
+/* footer rules */
 footer {
     color: white;
     padding: 20px 0;
