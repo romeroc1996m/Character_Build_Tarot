@@ -41,6 +41,7 @@ header{
 .characters {list-style-type: none;}
 
 .characters li { 
+    position: relative;
     display: inline-block;
     height: 220px;
     margin: 10px 8px;
@@ -48,18 +49,30 @@ header{
     background-color: black;
 
     text-align: left;
-
     cursor: pointer;
 }
 
 .characters li h5 { 
-padding: 12px; 8px }
+    position: relative;
+    color: white;
+    padding: 12px 8px;
+
+    z-index: 500;
+}
+
+.characters li a { text-decoration: none;}
 
 .orange_bumper {
     width: 100%;
     height: 6px;
     background-color: orange;
+
+    transition: height 0.2s ease;
+
+    position: absolute;
 }
+
+.characters li:hover .orange_bumper { height: 70px; }
 
 article { padding: 20px; }
 
@@ -90,14 +103,13 @@ article p {
     background-position-y: -70px;
     
     background-repeat: no-repeat;
-
-}
+    }
 
 #cups { background-position: -150px; }
 #swords { background-position: -300px; }
 #pentacles { background-position: -450px; }
 
-.spritehover { background-position-y: -150px; !important}
+.sprite:hover { background-position-y: -150px !important; }
 
 /* footer rules */
 footer {
@@ -111,5 +123,61 @@ footer {
     top: 100%;
 
     height: 80px;
-    background-color: rgb(40, 37, 37);
+    background-image: url('../images/background.jpg');
 }
+
+/* lightbox rules here */
+.lightbox {
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 0.85);
+    background-image: url('../images/QUEEN\ OF\ WANDS.jpg');
+    background-repeat: no-repeat;
+
+    background-size: 55vh;
+    background-position: 40px bottom;
+
+    z-index: 5000;
+
+    display: none;
+}
+
+#lightbox2 { background-image: url('../images/QUEEN\ OF\ CUPS.png'); }
+#lightbox3 { background-image: url('../images/QUEEN\ OF\ SWORDS.png'); }
+#lightbox4 { background-image: url('../images/QUEEN\ OF\ PENTACLES.png'); }
+
+.lightbox_close {
+    position: relative;
+    top: 20px;
+    left: 95%;
+
+    color: white;
+    font-size: 3em;
+
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.lightbox_close:hover { opacity: 0.5; color: orange;}
+
+.lightbox article {
+    width: 55%;
+    margin-left: 40%;
+    padding-top: 50px;
+}
+
+.lb_text, lb_heading { text-align: left;}
+
+.lb_text { 
+    line-height: 1.6 !important;
+    margin-left: 0;
+    padding-top: 2em;
+}
+
+/* turn the lightbox on using the target pseudo selector */
+.lightbox:target { display: block; }
